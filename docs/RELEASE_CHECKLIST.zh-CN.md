@@ -50,7 +50,7 @@ git grep -n "待检查词" $(git rev-list --all)
 - [x] CHANGELOG 写清新增、变化和已知限制
 - [x] Release Notes 面向用户介绍功能、安装方法与使用限制
 - [x] README 使用公开模拟数据版本的真实界面截图
-- [ ] 所有相对链接在 GitHub 页面可以打开
+- [x] 所有相对链接与三张公开截图均已验证可访问
 
 版本标签统一使用：
 
@@ -114,7 +114,8 @@ v0.5.0
 - [x] 开启 Dependabot 依赖更新
 - [ ] 开启 Private Vulnerability Reporting
 - [x] 配置 Issue 模板和 Pull Request 模板
-- [ ] 配置 Topics、项目简介和社交预览图
+- [x] 配置 Topics 和项目简介
+- [ ] 配置 GitHub 社交预览图
 - [ ] 建立 `beta`、`bug`、`enhancement`、`security` 标签
 - [ ] 正式发布前先创建 Draft Release
 
