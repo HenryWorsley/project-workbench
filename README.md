@@ -4,6 +4,8 @@
 
 **当前版本：`v0.5.0-beta.1`**
 
+[下载 Windows 安装版、便携版和 Web 版](https://github.com/HenryWorsley/project-workbench/releases/tag/v0.5.0-beta.1)
+
 > 这是公开测试版。仓库只包含虚构项目、虚构人员和模拟业务数据，不包含任何真实企业、客户或生产资料。
 
 ## 产品特色
@@ -27,7 +29,7 @@
 | Windows 联网安装版 | 已生成 | 小体积 NSIS `.exe`，缺少 WebView2 时联网获取 |
 | Windows 离线安装版 | 已生成 | 自带 WebView2 安装环境，适合现场无网络安装 |
 | Windows 便携版 | 已生成 | 单文件 `.exe`，无需安装 |
-| macOS / Linux | 已配置 | GitHub 标签触发多平台草稿构建，尚待签名与实机验收 |
+| macOS / Linux | 自动构建 | GitHub Actions 生成安装包，发布前仍需签名与实机验收 |
 | 鸿蒙手机 | 路线图 | 先提供 PWA，再评估 ArkTS 原生外壳 |
 
 暂不提供企业 MSI 版本。桌面安装与多平台安排见 [发行与平台路线图](docs/DISTRIBUTION_PLAN.zh-CN.md)。
