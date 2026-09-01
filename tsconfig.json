@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "types": ["node", "@cloudflare/workers-types", "vinext/types"],
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/workspace-app.tsx",
+    "components/ui/button.tsx",
+    "components/ui/badge.tsx",
+    "components/ui/dialog.tsx",
+    "components/ui/input.tsx",
+    "components/ui/native-select.tsx",
+    "components/ui/textarea.tsx",
+    "desktop/**/*.ts",
+    "desktop/**/*.tsx",
+    "lib/**/*.ts",
+    "next.config.ts",
+    "vite.config.ts",
+    "vite.desktop.config.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": ["node_modules", "src-tauri/target"]
+}

@@ -1,0 +1,24 @@
+name: 功能建议
+description: 提议一个明确的产品改进
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      description: 请先描述工作场景和当前阻碍。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 其他考虑
+      description: 可选方案、数据影响或界面影响。
+

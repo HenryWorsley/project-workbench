@@ -1,0 +1,18 @@
+[package]
+name = "project-workbench"
+version = "0.5.0-beta.1"
+description = "A local-first project planning and execution workbench"
+authors = ["Project Workbench contributors"]
+license = "Apache-2.0"
+edition = "2021"
+
+[lib]
+name = "project_workbench_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+

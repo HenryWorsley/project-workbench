@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "项目工作台",
+  "version": "0.5.0-beta.1",
+  "identifier": "app.projectworkbench.desktop",
+  "build": {
+    "beforeDevCommand": "npm run desktop:frontend:dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run desktop:frontend:build",
+    "frontendDist": "../dist-desktop"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "项目工作台",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1120,
+        "minHeight": 700,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "Project Workbench contributors",
+    "copyright": "Copyright 2026 Project Workbench contributors",
+    "category": "Productivity",
+    "shortDescription": "本地优先的项目计划与执行工作台",
+    "longDescription": "支持甘特图、动态任务视图、日程、工作记录和报表导出的本地项目工作台。",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico",
+      "icons/icon.icns"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["SimpChinese", "English"]
+      }
+    }
+  }
+}
+
