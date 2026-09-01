@@ -4,7 +4,7 @@
 
 项目采用“Web 核心 + 多平台外壳”的路线，不为每个平台重复开发业务界面。
 
-- 当前公开源码与 Windows 安装版：`v0.5.0-beta.1`
+- 当前公开源码与跨平台测试版：`v0.5.0-beta.1`
 - 第一个稳定版本目标：`v1.0.0`
 - Windows 桌面框架：Tauri 2
 - Windows 安装格式：NSIS `.exe`
@@ -21,18 +21,20 @@
 
 ## 版本阶段
 
-### `v0.5.0-beta.1`：公开源码与 Windows 安装测试版
+### `v0.5.0-beta.1`：公开源码与跨平台安装测试版
 
 - 发布源码和运行说明
 - 使用纯模拟数据
 - 完成 GitHub 基础治理文件
 - 保留浏览器本地存储
-- 生成 Windows x64 NSIS 安装包与便携版
+- 完成 Tauri 2 桌面外壳
+- 生成 Windows x64 NSIS 联网版、离线版与便携版
+- 生成 macOS Apple Silicon、macOS Intel、Linux AppImage 与 DEB 测试包
+- 生成 Web 静态发布包
 - 不把当前版本描述为稳定生产工具
 
 ### `v0.6.x`：Windows 数据与升级完善版
 
-- 增加 Tauri 2 桌面外壳
 - 继续使用免管理员安装的 NSIS `.exe`
 - 使用系统应用数据目录
 - 增加自动备份、恢复和数据结构迁移
@@ -71,13 +73,19 @@ ProjectWorkbench_0.5.0-beta.1_windows-x64-setup.exe
 ProjectWorkbench_0.5.0-beta.1_windows-x64-offline-setup.exe
 ProjectWorkbench_0.5.0-beta.1_windows-x64-portable.exe
 ProjectWorkbench_0.5.0-beta.1_windows-x64-portable.zip
+ProjectWorkbench_0.5.0-beta.1_macos-aarch64.dmg
+ProjectWorkbench_0.5.0-beta.1_macos-x64.dmg
+ProjectWorkbench_0.5.0-beta.1_linux-x64.AppImage
+ProjectWorkbench_0.5.0-beta.1_linux-amd64.deb
 ProjectWorkbench_0.5.0-beta.1_web-static.zip
 SHA256SUMS.txt
 ```
 
 NSIS 安装包采用“仅当前用户”模式，减少管理员权限要求。当前不生成企业 MSI。
 
-### 安装行为
+具体选择和安装方式见 [各平台安装指南](INSTALL.zh-CN.md)。
+
+### 稳定版安装目标
 
 - 程序文件与用户数据分开存放
 - 卸载程序默认保留用户数据和备份
@@ -103,20 +111,18 @@ NSIS 安装包采用“仅当前用户”模式，减少管理员权限要求。
 
 ## 多平台优先级
 
-| 优先级 | 平台 | 交付物 | 原因 |
+| 优先级 | 平台 | 当前状态 | 下一步 |
 | --- | --- | --- | --- |
-| P0 | Web | 源码运行版 | 开发和验证最快 |
-| P1 | Windows x64 | NSIS `.exe` | 当前主要使用环境 |
-| P1 | Windows x64 | 便携版 `.exe` | 无需安装的快速试用 |
-| P2 | PWA | 可安装网页 | 最快覆盖鸿蒙与其他手机 |
-| P2 | macOS | `.dmg` | 覆盖个人电脑用户 |
-| P3 | Linux | `.AppImage`、`.deb` | 开发者与私有部署 |
-| P3 | Windows ARM64 | 安装包 | 视设备需求推进 |
-| P4 | 鸿蒙原生 | ArkTS 外壳 | 在移动需求稳定后开发 |
+| P0 | Web | 源码版和静态包已发布 | PWA 离线缓存与触控布局 |
+| P1 | Windows x64 | 联网、离线、便携版已发布 | 签名、自动更新、升级验证 |
+| P2 | macOS | 双架构 DMG 测试包已发布 | 签名、公证与实机验收 |
+| P2 | Linux x64 | AppImage、DEB 测试包已发布 | 多发行版与桌面环境验收 |
+| P3 | Windows ARM64 | 未开始 | 根据设备需求推进 |
+| P4 | 鸿蒙原生 | 未开始 | PWA 验证后评估 ArkTS 外壳 |
 
 ## GitHub 自动发布
 
-建议建立两个工作流：
+仓库已经建立两个工作流：
 
 1. `ci.yml`：每次提交执行依赖安装、类型检查和 Web 构建。
 2. `release-desktop.yml`：推送 `v*` 标签后，在 Windows、macOS、Linux 构建机生成安装包，并上传到 GitHub Release 草稿。

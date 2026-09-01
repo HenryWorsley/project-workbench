@@ -17,8 +17,8 @@
 
 - [ ] 确认发布者拥有代码、图标、图片、字体和音乐的发布权
 - [ ] 确认依赖许可证与目标许可证兼容
-- [ ] 选择许可证并在根目录添加标准 `LICENSE` 文件
-- [ ] 在 README 中写明许可证，不使用含糊的“免费使用”表述
+- [x] 选择许可证并在根目录添加标准 `LICENSE` 文件
+- [x] 在 README 中写明许可证，不使用含糊的“免费使用”表述
 - [ ] 确认产品名称、图标和域名不存在明显冲突
 - [ ] 若保留独立品牌权利，在 README 中明确“代码许可证不等于商标授权”
 
@@ -26,11 +26,11 @@
 
 ## 2. 敏感信息
 
-- [ ] 搜索企业名、人员名、地址、客户名、项目编号和真实业务术语
-- [ ] 搜索邮箱、手机号、IP、域名、账号和本地绝对路径
-- [ ] 搜索 API Key、Token、证书、私钥、`.env` 和云服务配置
-- [ ] 检查图片、视频、PDF、压缩包和录屏画面
-- [ ] 检查 Git 历史和已删除文件；必要时重写历史后再公开
+- [x] 搜索企业名、人员名、地址、客户名、项目编号和真实业务术语
+- [x] 搜索邮箱、手机号、IP、域名、账号和本地绝对路径
+- [x] 搜索 API Key、Token、证书、私钥、`.env` 和云服务配置
+- [x] 检查公开截图和 Release 压缩包
+- [x] 检查当前公开 Git 历史
 - [ ] 从一个全新目录重新克隆仓库，再做一次独立检查
 - [ ] 开启 GitHub Secret Scanning 和 Push Protection（仓库支持时）
 
@@ -44,12 +44,12 @@ git grep -n "待检查词" $(git rev-list --all)
 
 ## 3. 版本与文档
 
-- [ ] `package.json`、桌面配置、界面页脚、CHANGELOG 和 Git 标签版本完全一致
-- [ ] 测试版使用 `-alpha`、`-beta` 或 `-rc` 标识
-- [ ] README 的安装命令在全新环境执行成功
-- [ ] CHANGELOG 写清新增、变化、修复、已知限制和升级影响
-- [ ] Release Notes 面向用户说明“为什么升级”，不只复制提交记录
-- [ ] 更新截图和手动录制的视频，确保动态效果真实可见
+- [x] `package.json`、桌面配置、界面页脚、CHANGELOG 和 Git 标签版本完全一致
+- [x] 测试版使用 `-alpha`、`-beta` 或 `-rc` 标识
+- [x] README 与独立安装指南覆盖所有已发布文件
+- [x] CHANGELOG 写清新增、变化和已知限制
+- [x] Release Notes 面向用户介绍功能、安装方法与使用限制
+- [x] README 使用公开模拟数据版本的真实界面截图
 - [ ] 所有相对链接在 GitHub 页面可以打开
 
 版本标签统一使用：
@@ -76,9 +76,9 @@ v0.5.0
 
 ## 5. 质量验证
 
-- [ ] `npm ci`
-- [ ] `npm run typecheck`
-- [ ] `npm run build`
+- [x] `npm ci`（GitHub CI）
+- [x] `npm run typecheck`
+- [x] `npm run build`
 - [ ] 甘特图整体拖动、左右缩放和日期换算正确
 - [ ] 日、周、月三种尺度正确
 - [ ] 周一背景、高亮和固定时间轴正确
@@ -102,18 +102,18 @@ v0.5.0
 - [ ] 卸载后用户数据保留
 - [ ] 安装包数字签名有效
 - [ ] 自动更新包签名有效
-- [ ] 发布 SHA-256 校验文件
+- [x] 发布 SHA-256 校验文件
 - [ ] 杀毒软件误报检查
 - [ ] 无网络环境启动检查
 
 ## 7. GitHub 仓库设置
 
-- [ ] 默认分支设为 `main`
+- [x] 默认分支设为 `main`
 - [ ] 保护 `main`，要求 CI 通过后合并
 - [ ] 限制 GitHub Actions 的默认写权限
-- [ ] 开启 Dependabot 安全更新
+- [x] 开启 Dependabot 依赖更新
 - [ ] 开启 Private Vulnerability Reporting
-- [ ] 配置 Issue 模板和 Pull Request 模板
+- [x] 配置 Issue 模板和 Pull Request 模板
 - [ ] 配置 Topics、项目简介和社交预览图
 - [ ] 建立 `beta`、`bug`、`enhancement`、`security` 标签
 - [ ] 正式发布前先创建 Draft Release

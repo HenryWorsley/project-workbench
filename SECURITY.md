@@ -11,7 +11,7 @@
 
 ## 报告安全问题
 
-请优先使用 GitHub 仓库的 **Security → Report a vulnerability** 私密报告入口。不要在公开 Issue 中发布以下内容：
+请优先使用 GitHub 仓库的 [Private vulnerability reporting](https://github.com/HenryWorsley/project-workbench/security/advisories/new) 私密报告入口。不要在公开 Issue 中发布以下内容：
 
 - 可利用的漏洞细节或复现数据
 - 真实个人、企业或客户信息
@@ -26,4 +26,3 @@
 - 当前数据保存在浏览器本地空间，清理网站数据可能造成丢失。
 - JSON 备份可能包含用户录入内容，分享前应自行检查和脱敏。
 - 第三方依赖漏洞应同时提供依赖名称、版本和官方安全公告链接。
-
